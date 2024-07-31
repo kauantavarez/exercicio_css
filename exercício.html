@@ -1,447 +1,315 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
-
 <head>
-
-  <meta charset="UTF-8">
-
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Meu portal de notícias</title>
-
-  <style>
-
-    body {
-
-      font-family: Arial, sans-serif;
-
-      margin: 0;
-
-      padding: 0;
-
-      box-sizing: border-box;
-
-    }
-
-    .container {
-
-      width: 100%;
-
-      margin: auto;
-
-      overflow: hidden;
-
-    }
-
-    header {
-
-      background: #333;
-
-      color: #fff;
-
-      padding: 1rem 0;
-
-    }
-
-    header h1 {
-
-      text-align: center;
-
-      margin: 0;
-
-    }
-
-    nav ul {
-
-      list-style: none;
-
-      padding: 0;
-
-      text-align: center;
-
-    }
-
-    nav ul li {
-
-      display: inline;
-
-      margin: 0 1rem;
-
-    }
-
-    nav ul li a {
-
-      color: #fff;
-
-      text-decoration: none;
-
-    }
-
-    .sections {
-
-      display: flex;
-
-      flex-wrap: nowrap;
-
-      overflow-x: auto;
-
-    }
-
-    .sections section {
-
-      flex: 0 0 auto;
-
-      width: 25%;
-
-      padding: 1rem;
-
-      box-sizing: border-box;
-
-    }
-
-    .articles {
-
-      display: flex;
-
-      flex-direction: column;
-
-      gap: 1rem;
-
-    }
-
-    .articles article {
-
-      background: #f4f4f4;
-
-      padding: 1rem;
-
-      border: 1px solid #ddd;
-
-    }
-
-    .articles article img {
-
-      max-width: 100%;
-
-      height: auto;
-
-    }
-
-  </style>
-
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu portal de notícias</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body > header {
+            background-color: #2f3640;
+            padding: 16px 0;
+            color: #f5f6fa;
+        }
+
+        header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        header li {
+            display: inline;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            margin-left: 16px;
+        }
+
+        header li a {
+            color: #f5f6fa;
+            text-decoration: none;
+        }
+
+        .container {
+            width: 1366px;
+            margin: 0 auto;
+        }
+
+        .articles {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .articles article img {
+            width: 100%;
+        }
+
+        .articles article {
+            width: 30%;
+        }
+
+        section {
+            padding: 16px 0;
+        }
+
+        section h2,
+        .articles article {
+            margin-bottom: 16px;
+        }
+
+        .articles article h3 {
+            margin-top: 8px;
+            margin-bottom: 8px;
+            font-size: 24px;
+        }
+
+        .articles article a {
+            background-color: blue;
+            color: #fff;
+            padding: 8px;
+            display: inline-block;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 8px;
+        }
+
+        .articles article a:hover {
+            text-decoration: underline;
+        }
+
+        .articles article p,
+        .articles article a {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        section h2 {
+            font-size: 32px;
+        }
+
+        #sports {
+            background-color: rgba(0, 255, 0, 0.1);
+        }
+
+        #sports .articles article a {
+            background-color: #009432;
+        }
+
+        #economy {
+            background-color: #f8f59f;
+        }
+
+        #economy .articles article a {
+            background-color: #ff9f1a;
+        }
+
+        #entertainment {
+            background-color: #f0f0f0;
+        }
+
+        #entertainment .articles article a {
+            background-color: #e84393;
+        }
+
+        #technology {
+            background-color: #dfe6e9;
+        }
+
+        #technology .articles article a {
+            background-color: #0984e3;
+        }
+    </style>
 </head>
-
 <body>
-
-  <header>
-
-    <div class="container">
-
-      <h1>Meu portal de notícias</h1>
-
-      <nav>
-
-        <ul>
-
-          <li><a href="#sports" title="Ir para a seção de esportes">Esportes</a></li>
-
-          <li><a href="#economy" title="Ir para a seção de economia">Economia</a></li>
-
-          <li><a href="#entertainment" title="Ir para a seção de entretenimento">Entretenimento</a></li>
-
-          <li><a href="#technology" title="Ir para a seção de tecnologia">Tecnologia</a></li>
-
-        </ul>
-
-      </nav>
-
-    </div>
-
-  </header>
-
-  <div class="sections">
-
+    <header>
+        <div class="container">
+            <h1>Meu portal de notícias</h1>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#sports" title="Ir para a seção de esportes">Esportes</a>
+                    </li>
+                    <li>
+                        <a href="#economy" title="Ir para a seção de economia">Economia</a>
+                    </li>
+                    <li>
+                        <a href="#entertainment" title="Ir para a seção de entretenimento">Entretenimento</a>
+                    </li>
+                    <li>
+                        <a href="#technology" title="Ir para a seção de tecnologia">Tecnologia</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
     <section id="sports">
-
-      <div class="container">
-
-        <h2>Esportes</h2>
-
-        <div class="articles">
-
-          <article>
-
-                        <img src="" alt="Bola de futebol no gramado" />
-
-            <header>
-
-              <time datetime="2022-07-13T12:35">13/07/2022 às 12:35</time>
-
-              <h3>Grande clássico na noite de hoje</h3>
-
-            </header>
-
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur consequuntur doloremque totam labore architecto. Corporis adipisci optio placeat quibusdam totam iure veritatis quam, ullam tenetur error? Laborum, modi itaque. Sunt.</p>
-
-            <a href="#" title="Leia a notícia completa">Ler mais</a>
-
-          </article>
-
-          <article>
-
-            <div class="image">
-
-                            <img src="" alt="Jogador de futebol americano correndo com a bola na mão" />
-
+        <div class="container">
+            <h2>Esportes</h2>
+            <div class="articles">
+                <article>
+                    <img src="https://static.vecteezy.com/ti/fotos-gratis/t2/20723325-fechar-acima-do-uma-futebol-atacante-pronto-para-chutes-a-bola-dentro-a-futebol-objetivo-foto.jpg" alt="Bola de futebol no gramado" />
+                    <header>
+                        <time>13/07/2022 às 12:35</time>
+                    </header>
+                    <h3>Grande clássico na noite de hoje</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur consequuntur doloremque totam labore architecto. Corporis adipisci optio placeat quibusdam totam iure veritatis quam, ullam tenetur error? Laborum, modi itaque. Sunt.
+                    </p>
+                    <a href="#" title="Leia a notícia completa">Ler mais</a>
+                </article>
+                <article>
+                    <div class="image">
+                        <img src="https://img.freepik.com/fotos-gratis/os-dois-jogadores-de-futebol-americano-em-acao-na-grama-verde-e-fundo-cinza_155003-16392.jpg" alt="Jogador de futebol americano correndo com a bola na mão" />
+                        <div class="overlay"></div>
+                    </div>
+                    <header>
+                        <time>13/07/2022 às 12:35</time>
+                    </header>
+                    <h3>Noite do Superbowl</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur consequuntur doloremque totam labore architecto. Corporis adipisci optio placeat quibusdam totam iure veritatis quam, ullam tenetur error? Laborum, modi itaque. Sunt.
+                    </p>
+                    <a href="#" title="Leia a notícia completa">Ler mais</a>
+                </article>
+                <article>
+                    <img src="https://s2-ge.glbimg.com/ctL1KkyWzKqFOwJwlFvD69iYEZ8=/0x0:1000x690/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2022/v/I/yUJoWnSPm7c9Kzyt5tFw/caboclo-fiba2.jpg" title="Vista aérea de uma quadra de basquete" />
+                    <header>
+                        <time>13/07/2022 às 12:35</time>
+                    </header>
+                    <h3>Notícia sobre a NBA</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur consequuntur doloremque totam labore architecto. Corporis adipisci optio placeat quibusdam totam iure veritatis quam, ullam tenetur error? Laborum, modi itaque. Sunt.
+                    </p>
+                    <a href="#" title="Leia a notícia completa">Ler mais</a>
+                </article>
             </div>
-
-            <header>
-
-              <time datetime="2022-07-13T12:35">13/07/2022 às 12:35</time>
-
-              <h3>Noite do Superbowl</h3>
-
-            </header>
-
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur consequuntur doloremque totam labore architecto. Corporis adipisci optio placeat quibusdam totam iure veritatis quam, ullam tenetur error? Laborum, modi itaque. Sunt.</p>
-
-            <a href="#" title="Leia a notícia completa">Ler mais</a>
-
-          </article>
-
-          <article>
-
-                        <img src="" title="Vista aérea de uma quadra de basquete" />
-
-            <header>
-
-              <time datetime="2022-07-13T12:35">13/07/2022 às 12:35</time>
-
-              <h3>Notícia sobre a NBA</h3>
-
-            </header>
-
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur consequuntur doloremque totam labore architecto. Corporis adipisci optio placeat quibusdam totam iure veritatis quam, ullam tenetur error? Laborum, modi itaque. Sunt.</p>
-
-            <a href="#" title="Leia a notícia completa">Ler mais</a>
-
-          </article>
-
         </div>
-
-      </div>
-
     </section>
-
     <section id="economy">
-
-      <div class="container">
-
-        <h2>Economia</h2>
-
-        <div class="articles">
-
-          <article>
-
-                        <img src="" alt="Muitos dólares" />
-
-            <header>
-
-              <time datetime="2022-07-13T12:35">13/07/2022 às 12:35</time>
-
-              <h3>Dólar em alta de 0.50%</h3>
-
-            </header>
-
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur consequuntur doloremque totam labore architecto. Corporis adipisci optio placeat quibusdam totam iure veritatis quam, ullam tenetur error? Laborum, modi itaque. Sunt.</p>
-
-            <a href="#" title="Leia a notícia completa">Ler mais</a>
-
-          </article>
-
-          <article>
-
-                        <img src="" alt="Várias notas de euro" />
-
-            <header>
-
-              <time datetime="2022-07-13T12:35">13/07/2022 às 12:35</time>
-
-              <h3>Euro em queda de 0.40%</h3>
-
-            </header>
-
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur consequuntur doloremque totam labore architecto. Corporis adipisci optio placeat quibusdam totam iure veritatis quam, ullam tenetur error? Laborum, modi itaque. Sunt.</p>
-
-            <a href="#" title="Leia a notícia completa">Ler mais</a>
-
-          </article>
-
-          <article>
-
-                        <img src="" alt="Extração de petróleo" />
-
-            <header>
-
-              <time datetime="2022-07-13T12:35">13/07/2022 às 12:35</time>
-
-              <h3>Alta no preço do barril do petróleo</h3>
-
-            </header>
-
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur consequuntur doloremque totam labore architecto. Corporis adipisci optio placeat quibusdam totam iure veritatis quam, ullam tenetur error? Laborum, modi itaque. Sunt.</p>
-
-            <a href="#" title="Leia a notícia completa">Ler mais</a>
-
-          </article>
-
+        <div class="container">
+            <h2>Economia</h2>
+            <div class="articles">
+                <article>
+                    <img src="https://www.empiricus.com.br/uploads/2022/12/Dolar-1024x683.jpg" alt="Muitos dólares" />
+                    <header>
+                        <time>13/07/2022 às 12:35</time>
+                    </header>
+                    <h3>Dólar em alta de 0.50%</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur consequuntur doloremque totam labore architecto. Corporis adipisci optio placeat quibusdam totam iure veritatis quam, ullam tenetur error? Laborum, modi itaque. Sunt.
+                    </p>
+                    <a href="#" title="Leia a notícia completa">Ler mais</a>
+                </article>
+                <article>
+                    <img src="https://files.sunoresearch.com.br/p/uploads/2017/10/euro.jpg.jpg" alt="Várias notas de euro" />
+                    <header>
+                        <time>13/07/2022 às 12:35</time>
+                    </header>
+                    <h3>Euro em queda de 0.40%</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur consequuntur doloremque totam labore architecto. Corporis adipisci optio placeat quibusdam totam iure veritatis quam, ullam tenetur error? Laborum, modi itaque. Sunt.
+                    </p>
+                    <a href="#" title="Leia a notícia completa">Ler mais</a>
+                </article>
+                <article>
+                    <img src="https://investnews.com.br/wp-content/uploads/2020/01/petr%C3%B3leo-1200x800.jpg" alt="Extração de petróleo" />
+                    <header>
+                        <time>13/07/2022 às 12:35</time>
+                    </header>
+                    <h3>Alta no preço do barril do petróleo</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur consequuntur doloremque totam labore architecto. Corporis adipisci optio placeat quibusdam totam iure veritatis quam, ullam tenetur error? Laborum, modi itaque. Sunt.
+                    </p>
+                    <a href="#" title="Leia a notícia completa">Ler mais</a>
+                </article>
+            </div>
         </div>
-
-      </div>
-
     </section>
-
     <section id="entertainment">
-
-      <div class="container">
-
-        <h2>Entretenimento</h2>
-
-        <div class="articles">
-
-          <article>
-
-                        <img src="" alt="Sala de cinema" />
-
-            <header>
-
-              <time datetime="2022-07-13T12:35">13/07/2022 às 12:35</time>
-
-              <h3>Estreia de filme aguardado</h3>
-
-            </header>
-
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur consequuntur doloremque totam labore architecto. Corporis adipisci optio placeat quibusdam totam iure veritatis quam, ullam tenetur error? Laborum, modi itaque. Sunt.</p>
-
-            <a href="#" title="Leia a notícia completa">Ler mais</a>
-
-          </article>
-
-          <article>
-
-                        <img src="" alt="Concerto ao vivo" />
-
-            <header>
-
-              <time datetime="2022-07-13T12:35">13/07/2022 às 12:35</time>
-
-              <h3>Show ao vivo de banda famosa</h3>
-
-            </header>
-
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur consequuntur doloremque totam labore architecto. Corporis adipisci optio placeat quibusdam totam iure veritatis quam, ullam tenetur error? Laborum, modi itaque. Sunt.</p>
-
-            <a href="#" title="Leia a notícia completa">Ler mais</a>
-
-          </article>
-
-          <article>
-
-                        <img src="" alt="Controle de videogame" />
-
-            <header>
-
-              <time datetime="2022-07-13T12:35">13/07/2022 às 12:35</time>
-
-              <h3>Novo jogo revolucionário</h3>
-
-            </header>
-
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur consequuntur doloremque totam labore architecto. Corporis adipisci optio placeat quibusdam totam iure veritatis quam, ullam tenetur error? Laborum, modi itaque. Sunt.</p>
-
-            <a href="#" title="Leia a notícia completa">Ler mais</a>
-
-          </article>
-
+        <div class="container">
+            <h2>Entretenimento</h2>
+            <div class="articles">
+                <article>
+                    <img src="https://img.freepik.com/fotos-gratis/parede-de-tijolos-vermelhos-com-osciloscopio-de-tela-de-neon-sinal-de-musica-3d_72104-2784.jpg" alt="Neon com sinal de música" />
+                    <header>
+                        <time>13/07/2022 às 12:35</time>
+                    </header>
+                    <h3>Festival de Música</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur consequuntur doloremque totam labore architecto. Corporis adipisci optio placeat quibusdam totam iure veritatis quam, ullam tenetur error? Laborum, modi itaque. Sunt.
+                    </p>
+                    <a href="#" title="Leia a notícia completa">Ler mais</a>
+                </article>
+                <article>
+                    <img src="https://img.freepik.com/fotos-gratis/claquete-de-cinema-e-pipoca-no-azul_23-2148523265.jpg" alt="Claquete de cinema e pipoca" />
+                    <header>
+                        <time>13/07/2022 às 12:35</time>
+                    </header>
+                    <h3>Estreias de Cinema</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur consequuntur doloremque totam labore architecto. Corporis adipisci optio placeat quibusdam totam iure veritatis quam, ullam tenetur error? Laborum, modi itaque. Sunt.
+                    </p>
+                    <a href="#" title="Leia a notícia completa">Ler mais</a>
+                </article>
+                <article>
+                    <img src="https://img.freepik.com/fotos-gratis/close-up-da-mulher-com-um-controle-remoto-assistindo-um-filme-de-tv-com-um-balanco-de-pipoca_23-2148763378.jpg" alt="Mulher assistindo TV com pipoca" />
+                    <header>
+                        <time>13/07/2022 às 12:35</time>
+                    </header>
+                    <h3>Novidades na TV</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur consequuntur doloremque totam labore architecto. Corporis adipisci optio placeat quibusdam totam iure veritatis quam, ullam tenetur error? Laborum, modi itaque. Sunt.
+                    </p>
+                    <a href="#" title="Leia a notícia completa">Ler mais</a>
+                </article>
+            </div>
         </div>
-
-      </div>
-
     </section>
-
     <section id="technology">
-
-      <div class="container">
-
-        <h2>Tecnologia</h2>
-
-        <div class="articles">
-
-          <article>
-
-                        <img src="" alt="Smartphone" />
-
-            <header>
-
-              <time datetime="2022-07-13T12:35">13/07/2022 às 12:35</time>
-
-              <h3>Novo smartphone lançado</h3>
-
-            </header>
-
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur consequuntur doloremque totam labore architecto. Corporis adipisci optio placeat quibusdam totam iure veritatis quam, ullam tenetur error? Laborum, modi itaque. Sunt.</p>
-
-            <a href="#" title="Leia a notícia completa">Ler mais</a>
-
-          </article>
-
-          <article>
-
-                        <img src="" alt="Robô em construção" />
-
-            <header>
-
-              <time datetime="2022-07-13T12:35">13/07/2022 às 12:35</time>
-
-              <h3>Avanços em robótica</h3>
-
-            </header>
-
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur consequuntur doloremque totam labore architecto. Corporis adipisci optio placeat quibusdam totam iure veritatis quam, ullam tenetur error? Laborum, modi itaque. Sunt.</p>
-
-            <a href="#" title="Leia a notícia completa">Ler mais</a>
-
-          </article>
-
-          <article>
-
-                        <img src="" alt="Inteligência artificial" />
-
-            <header>
-
-              <time datetime="2022-07-13T12:35">13/07/2022 às 12:35</time>
-
-              <h3>Impacto da IA na sociedade</h3>
-
-            </header>
-
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur consequuntur doloremque totam labore architecto. Corporis adipisci optio placeat quibusdam totam iure veritatis quam, ullam tenetur error? Laborum, modi itaque. Sunt.</p>
-
-            <a href="#" title="Leia a notícia completa">Ler mais</a>
-
-          </article>
-
+        <div class="container">
+            <h2>Tecnologia</h2>
+            <div class="articles">
+                <article>
+                    <img src="https://img.freepik.com/fotos-gratis/maos-cortadas-de-homem-usando-celular-com-interface-grafica-digital-holografica_53876-104422.jpg" alt="Pessoa usando celular com interface digital" />
+                    <header>
+                        <time>13/07/2022 às 12:35</time>
+                    </header>
+                    <h3>Novos Gadgets no Mercado</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur consequuntur doloremque totam labore architecto. Corporis adipisci optio placeat quibusdam totam iure veritatis quam, ullam tenetur error? Laborum, modi itaque. Sunt.
+                    </p>
+                    <a href="#" title="Leia a notícia completa">Ler mais</a>
+                </article>
+                <article>
+                    <img src="https://img.freepik.com/fotos-gratis/teclado-com-um-computador-laptop-e-um-celular-sobre-fundo-branco_23-2147884392.jpg" alt="Laptop e celular sobre uma mesa" />
+                    <header>
+                        <time>13/07/2022 às 12:35</time>
+                    </header>
+                    <h3>Avanços em IA</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur consequuntur doloremque totam labore architecto. Corporis adipisci optio placeat quibusdam totam iure veritatis quam, ullam tenetur error? Laborum, modi itaque. Sunt.
+                    </p>
+                    <a href="#" title="Leia a notícia completa">Ler mais</a>
+                </article>
+                <article>
+                    <img src="https://img.freepik.com/fotos-gratis/pessoa-usando-o-computador-de-mesa-com-codigo-de-programacao_23-2149371390.jpg" alt="Pessoa programando no computador" />
+                    <header>
+                        <time>13/07/2022 às 12:35</time>
+                    </header>
+                    <h3>Novo Software Revolucionário</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur consequuntur doloremque totam labore architecto. Corporis adipisci optio placeat quibusdam totam iure veritatis quam, ullam tenetur error? Laborum, modi itaque. Sunt.
+                    </p>
+                    <a href="#" title="Leia a notícia completa">Ler mais</a>
+                </article>
+            </div>
         </div>
-
-      </div>
-
     </section>
-
-  </div>
-
 </body>
-
 </html>
